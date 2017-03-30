@@ -8,9 +8,73 @@
       "title": "Home View",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "employeesView",
+      "components": [
+        {
+          "type": "NativeScript:editableList",
+          "serverSideSorting": false,
+          "serverSidePaging": false,
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "addScreenExtraFields": [],
+          "editScreenExtraFields": [],
+          "components": [
+            {
+              "type": "NativeScript:editableListForm",
+              "components": [
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "heading",
+                  "title": "Heading",
+                  "inputType": "heading",
+                  "headingSize": "h1",
+                  "dataBindingOptional": "FirstName"
+                }
+              ],
+              "name": "editableListForm",
+              "formType": "list"
+            }
+          ],
+          "name": "employeesViewModel",
+          "dataProvider": "backendServices",
+          "collection": "Employees",
+          "headerField": "LastName",
+          "isMapView": false,
+          "addItemForm": false,
+          "editItemForm": false,
+          "deleteItemButton": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail"
+        }
+      ],
+      "title": "Employees",
+      "addToNavigation": true,
+      "icon": "contacts"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "NativeScript:dataProvider",
+      "name": "backendServices",
+      "source": "everlive",
+      "everliveKey": "r3g3pzf51je658wx",
+      "offlineStorage": false,
+      "title": "Backend Services"
+    },
+    {
+      "type": "NativeScript:dataProvider",
+      "name": "backendServices1",
+      "source": "everlive",
+      "everliveKey": "r3g3pzf51je658wx",
+      "offlineStorage": false,
+      "title": "Northwind"
+    }
+  ],
   "name": "nativeScriptApp",
   "navigation": "listmenu",
   "transition": "none",
